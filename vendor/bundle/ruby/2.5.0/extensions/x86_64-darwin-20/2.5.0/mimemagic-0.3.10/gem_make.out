@@ -1,0 +1,3 @@
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/mimemagic-0.3.10/ext/mimemagic
+/Users/tomitatoru/.rbenv/versions/2.5.7/bin/ruby -rrubygems /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR=/Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-20/2.5.0/mimemagic-0.3.10 RUBYLIBDIR=/Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-20/2.5.0/mimemagic-0.3.10
+mkdir -p /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-20/2.5.0/mimemagic-0.3.10/mimemagic

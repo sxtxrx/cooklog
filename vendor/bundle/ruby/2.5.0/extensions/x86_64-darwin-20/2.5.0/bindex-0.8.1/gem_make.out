@@ -1,0 +1,15 @@
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/tomitatoru/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20210614-2357-1oqq33x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20210614-2357-1mqzuvp/skiptrace/internal
