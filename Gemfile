@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+ gem 'rubocop-airbnb'
   gem 'rspec-rails', '~> 4.0.0.beta2'  # 追記
   gem 'rails-controller-testing'  # 追記
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

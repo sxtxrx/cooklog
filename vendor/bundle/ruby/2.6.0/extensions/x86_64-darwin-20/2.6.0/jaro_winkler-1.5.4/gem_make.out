@@ -1,0 +1,18 @@
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+/Users/tomitatoru/.rbenv/versions/2.6.5/bin/ruby -I /Users/tomitatoru/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210617-9585-1ga2bsf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make "DESTDIR=" clean
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make "DESTDIR="
+compiling adj_matrix.c
+compiling codepoints.c
+compiling jaro.c
+compiling jaro_winkler.c
+linking shared-object jaro_winkler/jaro_winkler_ext.bundle
+
+current directory: /Users/tomitatoru/cooklog/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 jaro_winkler_ext.bundle ./.gem.20210617-9585-1pk5rpe/jaro_winkler
