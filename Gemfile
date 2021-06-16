@@ -73,5 +73,6 @@ group :development, :test do # 開発環境、テスト環境
   gem 'sqlite3' # sqlite3
 end
 gem 'devise'  # 追記
+gem 'bootstrap-sass'  # Bootstrap用のgemを追加
 
 
