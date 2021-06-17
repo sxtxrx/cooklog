@@ -35,7 +35,8 @@ RSpec.describe "Users", type: :system do
         end
       end
     end
-  
+  end
+
     describe "プロフィールページ" do
       context "ページレイアウト" do
         before do
@@ -57,7 +58,7 @@ RSpec.describe "Users", type: :system do
         end
       end
     end
-  end
-    end
-  end
+  
+    
+  
 end
