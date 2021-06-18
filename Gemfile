@@ -74,7 +74,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do # 開発環境、テスト環境
   gem 'sqlite3' # sqlite3
 end
-gem 'devise'  # 追記
-gem 'bootstrap-sass'  # Bootstrap用のgemを追加
-
+gem 'devise' 
+gem 'bootstrap-sass'  
+gem 'jquery-rails', '4.3.1' 
 
