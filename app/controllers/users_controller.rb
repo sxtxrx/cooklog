@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-  end
+  end 
 
   def create
     @user = User.new(user_params)
@@ -20,12 +20,27 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  def edit
+    @user = User.find(params[:id])
+  end
+  def @user = User.find)(params[id])
+    if @user.update_attributes(params[:id])
+      flash[:success] = "プロフィールが更新されました"
+      redirect_to @user
+    else
+
+      render 'edit'
+    end
+  end
 
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+  end
+  def user_params_update
+    params.require(:user).permit(:name,:email, :introduction, :sex)
   end
 
 end
