@@ -38,6 +38,7 @@ RSpec.describe "Users", type: :system do
   end
 
     describe "プロフィールページ" do
+      let(:user) { FactoryBot.create(:user) }  
       context "ページレイアウト" do
         before do
           visit user_path(user)

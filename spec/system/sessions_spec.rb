@@ -68,7 +68,7 @@ RSpec.describe "Sessions", type: :system do
           expect(page).not_to have_link 'ログイン', href: login_path
         end
       end
-    end
-    end
+  end
+end
 
 
