@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 group :production do # 本番環境
   gem 'pg' # PostgreSQL
+  gem 'fog', '1.42'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -78,3 +79,5 @@ end
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails', '4.3.1'
+gem 'carrierwave',             '1.2.2'
+gem "mini_magick",             '>= 4.9.4'

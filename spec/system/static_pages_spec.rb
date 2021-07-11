@@ -23,7 +23,7 @@ RSpec.describe "StaticPages", type: :system do
       before do
         login_for_system(user)
       end
-      
+
       it "「新しい料理を作る」リンクが表示されること" do
         visit root_path
         expect(page).to have_link "新しい料理を作る", href: new_dish_path

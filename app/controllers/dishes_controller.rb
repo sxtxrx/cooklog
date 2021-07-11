@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
     before_action :logged_in_user
-    before_action :correct_user, only: [:edit, :update]
+    before_action :correct_user, only: [:edit, :update, :destroy]
     def new
         @dish = Dish.new
     end
@@ -44,7 +44,7 @@ class DishesController < ApplicationController
           redirect_to root_url
         end
       end
-    
+
   private
 
     def dish_params
@@ -55,5 +55,10 @@ class DishesController < ApplicationController
     def correct_user
         @dish = current_user.dishes.find_by(id: params[:id])
         redirect_to root_url if @dish.nil?
+    end
+
+    def dish_params
+      params.require(:dish).permit(:name, :description, :portion, :tips,
+                                   :reference, :required_time, :popularity, :cook_memo, :picture)
     end
 end

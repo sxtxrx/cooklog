@@ -79,6 +79,7 @@ RSpec.describe "Dishes", type: :system do
         expect(page).to have_content dish.popularity
       end
     end
+
     context "料理の削除", js: true do
       it "削除成功のフラッシュが表示されること" do
         login_for_system(user)
@@ -98,6 +99,7 @@ RSpec.describe "Dishes", type: :system do
       visit dish_path(dish)
       click_link "編集"
     end
+
     context "料理の削除処理", js: true do
       it "削除成功のフラッシュが表示されること" do
         click_on '削除'
@@ -105,7 +107,6 @@ RSpec.describe "Dishes", type: :system do
         expect(page).to have_content '料理が削除されました'
       end
     end
-
 
     context "ページレイアウト" do
       it "正しいタイトルが表示されること" do

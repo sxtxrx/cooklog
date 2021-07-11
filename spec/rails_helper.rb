@@ -32,6 +32,8 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 require 'capybara/rspec'
+require 'carrierwave/test/matchers'
+
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f } # 追加
 
 RSpec.configure do |config|
