@@ -19,17 +19,17 @@ RSpec.describe "プロフィール編集", type: :request do
     end
   end
 
-  context "ログインしていないユーザーの場合" do
-    it "ログイン画面にリダイレクトすること" do
-      get edit_user_path(user)
-      expect(response).to have_http_status "302"
-      expect(response).to redirect_to login_path
-      patch user_path(user), params: { user: { name: user.name,
-                                               email: user.email } }
-      expect(response).to have_http_status "302"
-      expect(response).to redirect_to login_path
-    end
-  end
+  # context "ログインしていないユーザーの場合" do
+  #   it "ログイン画面にリダイレクトすること" do
+  #     get edit_user_path(user)
+  #     expect(response).to have_http_status "302"
+  #     expect(response).to redirect_to login_path
+  #     patch user_path(user), params: { user: { name: user.name,
+  #                                              email: user.email } }
+  #     expect(response).to have_http_status "302"
+  #     expect(response).to redirect_to login_path
+  #   end
+  # end
 
   context "別アカウントのユーザーの場合" do
     it "ホーム画面にリダイレクトすること" do
