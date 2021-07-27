@@ -17,4 +17,8 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  get :favorites, to: 'favorites#index'  # 追記
+  post   "favorites/:dish_id/create"  => "favorites#create"
+  delete "favorites/:dish_id/destroy" => "favorites#destroy"
+
 end

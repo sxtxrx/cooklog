@@ -5,7 +5,7 @@
       <%= form_for(@dish) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <span class="picture">
-          <%= f.label :picture %>　<span class="input-unneed">※任意</span>
+          <%= f.label :picture %> <span class="input-unneed">※任意</span>
           <%= f.file_field :picture, accept: 'image/jpeg,image/png', class: 'form-control', id: 'dish-picture' %>
           <%= image_tag(@dish.picture.thumb400.url) if @dish.picture.url.present? %>
         </span>
