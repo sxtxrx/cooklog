@@ -1,24 +1,79 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
 
-Things you may want to cover:
+#users table
 
-* Ruby version
+| Column            | Type    | Options     |
+| --------          | ------  | ----------- |
+| name          | string  |null: false  |
+| email             | string  |null: false ,unique: true|
+| picture| string  |  | 
+|introduction            | text   |  | 
+| sex   |strings  |         |
+| admin|  boolean|      | 
+|password_digest|  |        | 
+|remember_digest|  |        | 
 
-* System dependencies
 
-* Configuration
+### Association
+has_many :prototypes,dependent: :destroy
+  has_many :comments,dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :prototype_likes, through: :likes, source: :prototype
 
-* Database creation
 
-* Database initialization
+#relationship table
+|           |  || 
+|           |  || 
 
-* How to run the test suite
+### Association
+belongs_to :country
+belongs_to :user
+has_many :comments,dependent: :destroy
+has_one_attached :image
+has_many :likes,dependent: :destroy
+has_many :users, through: :likes
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+#dish table
+|           |  || 
+|           |  || 
+|           |  || 
+|           |  || 
+|           |  || 
+|           |  || 
+|           |  || 
+|           |  || 
+
+### Association
+belongs_to :prototype
+belongs_to :user
+
+
+
+＃likes table
+| Column         | Type      | Options     |
+| --------       | ------    | ----------- |
+|prototype_id      | reference    |foreign key |
+|user_id           |reference   |foreign key |
+### Association
+belongs_to :user
+belongs_to :prototype
+
+
+
+
+ ## アプリの名前
+ -trippin'asia(URL:https://trippinasia.herokuapp.com/)
+
+## 使用ライブラリ、フレーム
+
+-html&css
+-JavaScript
+-jQuery
+-Ruby
+-Ruby on Rails
+-MySqL
+-AWS
