@@ -5,6 +5,7 @@ RSpec.describe Dish, type: :model do
   let!(:dish_one_week_ago) { create(:dish, :one_week_ago) }
   let!(:dish_one_month_ago) { create(:dish, :one_month_ago) }
   let!(:dish) { create(:dish) }
+
   context "バリデーション" do
     it "有効な状態であること" do
       expect(dish).to be_valid

@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
-  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy,
-    :following, :followers]
+  before_action :logged_in_user, only: [
+    :index, :show, :edit, :update, :destroy,
+    :following, :followers,
+  ]
 
   def new
     @user = User.new
@@ -9,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @dishes = @user.dishes.paginate(page: params[:page], per_page: 5)  
+    @dishes = @user.dishes.paginate(page: params[:page], per_page: 5)
   end
 
   def index

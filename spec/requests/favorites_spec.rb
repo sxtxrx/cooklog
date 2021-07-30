@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "お気に入り登録機能", type: :request do
   let(:user) { create(:user) }
   let(:dish) { create(:dish) }
+
   context "お気に入り一覧ページの表示" do
     context "ログインしている場合" do
       it "レスポンスが正常に表示されること" do
@@ -21,6 +22,7 @@ RSpec.describe "お気に入り登録機能", type: :request do
       end
     end
   end
+
   context "お気に入り登録処理" do
     context "ログインしている場合" do
       before do

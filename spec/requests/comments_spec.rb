@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "コメント機能", type: :request do
   let!(:user) { create(:user) }
-  let!(:other_user) { create(:user) } 
+  let!(:other_user) { create(:user) }
   let!(:dish) { create(:dish) }
   let!(:comment) { create(:comment, user_id: user.id, dish: dish) }
 
@@ -48,18 +48,17 @@ RSpec.describe "コメント機能", type: :request do
           end
         end
       end
-  
+
         context "コメントを作成したユーザーでない場合" do
           it "コメントの削除はできないこと" do
             login_for_request(other_user)
               expect {
               delete comment_path(comment)
-           }.not_to change(dish.comments, :count)
-            end
+              }.not_to change(dish.comments, :count)
           end
         end
-      end
-  
+    end
+  end
 
     context "ログインしていない場合" do
       it "コメントの削除はできず、ログインページへリダイレクトすること" do
@@ -68,4 +67,4 @@ RSpec.describe "コメント機能", type: :request do
         }.not_to change(dish.comments, :count)
       end
     end
-  end
+end

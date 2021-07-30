@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
      def index
       @favorites = current_user.favorites
     end
-  
+
     def create
       @dish = Dish.find(params[:dish_id])
       @user = @dish.user
@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
         @user.update_attribute(:notification, true)
       end
     end
-  
+
     def destroy
       @dish = Dish.find(params[:dish_id])
       current_user.favorites.find_by(dish_id: @dish.id).destroy
@@ -30,4 +30,3 @@ class FavoritesController < ApplicationController
       end
     end
   end
-  
