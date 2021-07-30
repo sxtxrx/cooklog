@@ -6,19 +6,18 @@ class User < ApplicationRecord
     has_many :active_relationships, class_name: "Relationship",
                                     foreign_key: "follower_id",
                                     dependent: :destroy
-                                        
+
     has_many :following, through: :active_relationships, source: :followed
     has_many :passive_relationships, class_name: "Relationship",
-                                      foreign_key: "followed_id",
-                                      dependent: :destroy
-    has_many :favorites, dependent: :destroy  
-has_many :notifications,dependent: :destroy
-
+                                     foreign_key: "followed_id",
+                                     dependent: :destroy
+    has_many :favorites, dependent: :destroy
+    has_many :notifications, dependent: :destroy
+    has_many :lists, dependent: :destroy
 
     has_many :followers, through: :passive_relationships, source: :follower
     has_many :favorites, dependent: :destroy
 
-    
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
@@ -80,24 +79,39 @@ has_many :notifications,dependent: :destroy
         def followed_by?(other_user)
           followers.include?(other_user)
         end
+
         def favorite(dish)
           Favorite.create!(user_id: id, dish_id: dish.id)
         end
-      
+
         # 料理をお気に入り解除する
         def unfavorite(dish)
           Favorite.find_by(user_id: id, dish_id: dish.id).destroy
         end
-      
+
         # 現在のユーザーがお気に入り登録してたらtrueを返す
         def favorite?(dish)
           !Favorite.find_by(user_id: id, dish_id: dish.id).nil?
         end
-      
 
-  private
+        # 料理をリストに登録する
+        def list(dish)
+          List.create!(user_id: dish.user_id, dish_id: dish.id, from_user_id: id)
+        end
 
-      def downcase_email
-        self.email = email.downcase
+        # 料理をリストから解除する
+        def unlist(list)
+          list.destroy
+        end
+
+        # 現在のユーザーがリスト登録してたらtrueを返す
+        def list?(dish)
+          !List.find_by(dish_id: dish.id, from_user_id: id).nil?
+        end
+
+        private
+
+            def downcase_email
+              self.email = email.downcase
+            end
       end
-end

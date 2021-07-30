@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'lists/index'
   get 'sessions/new'
   get 'users/new'
   get 'users/show'
@@ -17,10 +18,12 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  get :favorites, to: 'favorites#index'  # 追記
+  get :favorites, to: 'favorites#index' # 追記
   post   "favorites/:dish_id/create"  => "favorites#create"
   delete "favorites/:dish_id/destroy" => "favorites#destroy"
-  resources :comments,only: [:create, :destroy]
-  resources :notifications, only: :index  # 追記
-
+  resources :comments, only: [:create, :destroy]
+  resources :notifications, only: :index # 追記
+  get :lists, to: 'lists#index'
+  post   "lists/:dish_id/create"  => "lists#create"
+  delete "lists/:list_id/destroy" => "lists#destroy"
 end

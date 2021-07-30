@@ -151,6 +151,7 @@ RSpec.describe "Dishes", type: :system do
         expect(dish.reload.name).not_to eq ""
       end
     end
+
     context "コメントの登録＆削除" do
       it "自分の料理に対するコメントの登録＆削除が正常に完了すること" do
         login_for_system(user)

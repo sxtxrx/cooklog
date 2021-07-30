@@ -3,10 +3,9 @@ require 'rails_helper'
   RSpec.describe "Users", type: :system do
     let!(:user) { create(:user) }
     let!(:admin_user) { create(:user, :admin) } # 追記
-    let!(:other_user) { create(:user) }  # 追加
+    let!(:other_user) { create(:user) } # 追加
     let!(:dish) { create(:dish, user: user) }
-    let!(:other_dish) { create(:dish, user: other_user) }  # 追記
-
+    let!(:other_dish) { create(:dish, user: other_user) } # 追記
 
     describe "ユーザー一覧ページ" do
       context "管理者ユーザーの場合" do
@@ -21,7 +20,7 @@ require 'rails_helper'
           end
         end
       end
-      end
+    end
 
       context "管理者ユーザー以外の場合" do
         it "ぺージネーション、自分のアカウントのみ削除ボタンが表示されること" do
@@ -39,7 +38,8 @@ require 'rails_helper'
           end
         end
       end
-    end
+  end
+
   describe "ユーザー登録ページ" do
     before do
       visit signup_path
@@ -164,7 +164,7 @@ require 'rails_helper'
         # it "料理のページネーションが表示されていることを確認" do
         #   expect(page).to have_css "div.pagination"
         # end
-        
+
         context "ユーザーのフォロー/アンフォロー処理", js: true do
           # it "ユーザーのフォロー/アンフォローができること" do
           #   login_for_system(user)
@@ -175,7 +175,7 @@ require 'rails_helper'
           #   click_button 'フォロー中'
           #   expect(page).to have_button 'フォローする'
           # end
-        end 
+        end
         # context "お気に入り登録/解除" do
         #   before do
         #     login_for_system(user)
@@ -200,7 +200,7 @@ require 'rails_helper'
         #     expect(page).to have_css ".favorite-dish", count: 1
         #     expect(page).to have_content dish.name
         #   end
-    
+
         #   it "料理のお気に入り登録/解除ができること" do
         #     expect(user.favorite?(dish)).to be_falsey
         #     user.favorite(dish)
@@ -213,12 +213,12 @@ require 'rails_helper'
           before do
             login_for_system(user)
           end
-    
+
           context "自分以外のユーザーの料理に対して" do
             before do
               visit dish_path(other_dish)
             end
-    
+
             it "お気に入り登録によって通知が作成されること" do
               find('.like').click
               visit dish_path(other_dish)
@@ -233,7 +233,7 @@ require 'rails_helper'
               expect(page).to have_content other_dish.description
               expect(page).to have_content other_dish.created_at.strftime("%Y/%m/%d(%a) %H:%M")
             end
-    
+
             it "コメントによって通知が作成されること" do
               fill_in "comment_content", with: "コメントしました"
               click_button "コメント"
@@ -250,12 +250,12 @@ require 'rails_helper'
               expect(page).to have_content other_dish.created_at.strftime("%Y/%m/%d(%a) %H:%M")
             end
           end
-    
+
           context "自分の料理に対して" do
             before do
               visit dish_path(dish)
             end
-    
+
             it "お気に入り登録によって通知が作成されないこと" do
               find('.like').click
               visit dish_path(dish)
@@ -266,7 +266,7 @@ require 'rails_helper'
               expect(page).not_to have_content dish.description
               expect(page).not_to have_content dish.created_at
             end
-    
+
             it "コメントによって通知が作成されないこと" do
               fill_in "comment_content", with: "自分でコメント"
               click_button "コメント"
@@ -278,7 +278,81 @@ require 'rails_helper'
               expect(page).not_to have_content other_dish.description
               expect(page).not_to have_content other_dish.created_at
             end
+          end 
+
+        end
+        context "リスト登録/解除" do
+          before do
+            login_for_system(user)
+          end
+      
+          it "料理のお気に入り登録/解除ができること" do
+            expect(user.list?(dish)).to be_falsey
+            user.list(dish)
+            expect(user.list?(dish)).to be_truthy
+            user.unlist(List.first)
+            expect(user.list?(dish)).to be_falsey
+          end
+      
+          it "トップページからリスト登録/解除ができること", js: true do
+            visit root_path
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+            link.click
+            link = find('.unlist')
+            expect(link[:href]).to include "/lists/#{List.first.id}/destroy"
+            link.click
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+          end
+      
+          it "ユーザー個別ページからリスト登録/解除ができること", js: true do
+            visit user_path(user)
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+            link.click
+            link = find('.unlist')
+            expect(link[:href]).to include "/lists/#{List.first.id}/destroy"
+            link.click
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+          end
+      
+          it "料理個別ページからリスト登録/解除ができること", js: true do
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+            link.click
+            link = find('.unlist')
+            expect(link[:href]).to include "/lists/#{List.first.id}/destroy"
+            link.click
+            link = find('.list')
+            expect(link[:href]).to include "/lists/#{dish.id}/create"
+          end
+      
+          it "リスト一覧ページが期待通り表示され、リストから削除することもできること" do
+            visit lists_path
+            expect(page).not_to have_css ".list-dish"
+            user.list(dish)
+            dish_2 = create(:dish, user: user)
+            other_user.list(dish_2)
+            visit lists_path
+            expect(page).to have_css ".list-dish", count: 2
+            expect(page).to have_content dish.name
+            expect(page).to have_content dish.description
+            expect(page).to have_content List.last.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+            expect(page).to have_content "この料理を作る予定リストに追加しました。"
+            expect(page).to have_content dish_2.name
+            expect(page).to have_content dish_2.description
+            expect(page).to have_content List.first.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+            expect(page).to have_content "#{other_user.name}さんがこの料理に食べたいリクエストをしました。"
+            expect(page).to have_link other_user.name, href: user_path(other_user)
+            user.unlist(List.first)
+            visit lists_path
+            expect(page).to have_css ".list-dish", count: 1
+            expect(page).to have_content dish.name
+            find('.unlist').click
+            visit lists_path
+            expect(page).not_to have_css ".list-dish"
           end
         end
-      end
-    
+    end
