@@ -22,7 +22,13 @@ RSpec.describe "料理編集", type: :request do
     #   redirect_to dish
     #   follow_redirect!
     #   expect(response).to render_template('dishes/show')
-    # end
+
+    #     patch dish_path(dish), params: { dish: { name: "イカの塩焼き",
+    #                                              （省略）
+    #                                              ingredients_attributes: [
+    #                                                name: "編集-じゃがいも",
+    #                                                quantity: "編集-2個"] } }
+    # # end
   end
 
   context "ログインしていないユーザーの場合" do
