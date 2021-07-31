@@ -23,6 +23,9 @@ end
                  popularity: 5,
                  cook_memo: "初めて作った割にはうまくできた！",
                  user_id: 1)
+                 dish = Dish.first
+                 Log.create!(dish_id: dish.id, # 追記
+                             content: dish.cook_memo) # 追記
 end
 # リレーションシップ
 users = User.all

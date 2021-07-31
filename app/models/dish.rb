@@ -1,8 +1,9 @@
 class Dish < ApplicationRecord
   belongs_to :user
-  has_many :favorites, dependent: :destroy  
-  has_many :comments,dependent: :destroy
-  has_many :lists,dependent:  :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :lists, dependent:  :destroy
+  has_many :logs, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 30 }
@@ -21,6 +22,11 @@ class Dish < ApplicationRecord
             def feed_comment(dish_id)
               Comment.where("dish_id = ?", dish_id)
             end
+
+  # 料理に付属するログのフィードを作成
+  def feed_log(dish_id)
+    Log.where("dish_id = ?", dish_id)
+  end
 
 def picture_size
   if picture.size > 5.megabytes
