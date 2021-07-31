@@ -158,6 +158,8 @@ require 'rails_helper'
             expect(page).to have_content dish.user.name
             expect(page).to have_content dish.required_time
             expect(page).to have_content dish.popularity
+            expect(page).to have_content "★" * dish.popularity + "☆" * (5 - dish.popularity)
+          end
           end
         end
       end
@@ -355,4 +357,5 @@ require 'rails_helper'
             expect(page).not_to have_css ".list-dish"
           end
         end
+        
     end
