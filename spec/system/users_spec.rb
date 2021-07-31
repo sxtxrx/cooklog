@@ -2,8 +2,8 @@ require 'rails_helper'
 
   RSpec.describe "Users", type: :system do
     let!(:user) { create(:user) }
-    let!(:admin_user) { create(:user, :admin) } # 追記
     let!(:other_user) { create(:user) } # 追加
+    let!(:admin_user) { create(:user, :admin) } # 追記
     let!(:dish) { create(:dish, user: user) }
     let!(:other_dish) { create(:dish, user: other_user) } # 追記
 
@@ -278,14 +278,14 @@ require 'rails_helper'
               expect(page).not_to have_content other_dish.description
               expect(page).not_to have_content other_dish.created_at
             end
-          end 
-
+          end
         end
+
         context "リスト登録/解除" do
           before do
             login_for_system(user)
           end
-      
+
           it "料理のお気に入り登録/解除ができること" do
             expect(user.list?(dish)).to be_falsey
             user.list(dish)
@@ -293,7 +293,7 @@ require 'rails_helper'
             user.unlist(List.first)
             expect(user.list?(dish)).to be_falsey
           end
-      
+
           it "トップページからリスト登録/解除ができること", js: true do
             visit root_path
             link = find('.list')
@@ -305,7 +305,7 @@ require 'rails_helper'
             link = find('.list')
             expect(link[:href]).to include "/lists/#{dish.id}/create"
           end
-      
+
           it "ユーザー個別ページからリスト登録/解除ができること", js: true do
             visit user_path(user)
             link = find('.list')
@@ -317,7 +317,7 @@ require 'rails_helper'
             link = find('.list')
             expect(link[:href]).to include "/lists/#{dish.id}/create"
           end
-      
+
           it "料理個別ページからリスト登録/解除ができること", js: true do
             link = find('.list')
             expect(link[:href]).to include "/lists/#{dish.id}/create"
@@ -328,7 +328,7 @@ require 'rails_helper'
             link = find('.list')
             expect(link[:href]).to include "/lists/#{dish.id}/create"
           end
-      
+
           it "リスト一覧ページが期待通り表示され、リストから削除することもできること" do
             visit lists_path
             expect(page).not_to have_css ".list-dish"
