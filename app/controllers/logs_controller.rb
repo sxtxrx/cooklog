@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
     before_action :logged_in_user
-    before_action :correct_user, only: :create  # 追記
+    before_action :correct_user, only: :create # 追記
 
     def create
       @dish = Dish.find(params[:dish_id])
@@ -8,7 +8,7 @@ class LogsController < ApplicationController
       @log.save
       flash[:success] = "クックログを追加しました！"
       Log.create(dish_id: @dish.id, content: @dish.cook_memo)
-      List.find(params[:list_id]).destroy unless params[:list_id].nil? 
+      List.find(params[:list_id]).destroy unless params[:list_id].nil?
       redirect_to dish_path(@dish)
     end
 
