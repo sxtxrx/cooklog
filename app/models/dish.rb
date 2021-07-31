@@ -4,6 +4,8 @@ class Dish < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :lists, dependent:  :destroy
   has_many :logs, dependent: :destroy
+  has_many :ingredients, dependent: :destroy # 追記
+  accepts_nested_attributes_for :ingredients
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 30 }

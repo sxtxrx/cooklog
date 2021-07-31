@@ -159,10 +159,13 @@ require 'rails_helper'
             expect(page).to have_content dish.required_time
             expect(page).to have_content dish.popularity
             expect(page).to have_content "★" * dish.popularity + "☆" * (5 - dish.popularity)
-          end
+            dish.ingredients.each do |i|
+              expect(page).to have_content i.name
+              expect(page).to have_content i.quantity
+            end
           end
         end
-      end
+    end
         # it "料理のページネーションが表示されていることを確認" do
         #   expect(page).to have_css "div.pagination"
         # end
@@ -357,5 +360,4 @@ require 'rails_helper'
             expect(page).not_to have_css ".list-dish"
           end
         end
-        
-    end
+      end
