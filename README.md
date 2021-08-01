@@ -98,12 +98,3 @@ belongs_to :user
 belongs_to :prototype
 
 
-## 使用ライブラリ、フレーム
-
-* ...
--html&css
--JavaScript
--jQuery
--Ruby
--Ruby on Rails
--AWS
