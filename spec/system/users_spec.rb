@@ -165,7 +165,7 @@ require 'rails_helper'
             end
           end
         end
-    end
+      end
         # it "料理のページネーションが表示されていることを確認" do
         #   expect(page).to have_css "div.pagination"
         # end
@@ -360,4 +360,4 @@ require 'rails_helper'
             expect(page).not_to have_css ".list-dish"
           end
         end
-      end
+    end

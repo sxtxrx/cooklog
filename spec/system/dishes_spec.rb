@@ -360,12 +360,32 @@ RSpec.describe "Dishes", type: :system do
         end
       end
     end
-
+    end
     context "ログインしていない場合" do
       it "検索窓が表示されないこと" do
         visit root_path
         expect(page).not_to have_css 'form#dish_search'
       end
     end
+    describe "料理一覧ページ" do
+      context "CSV出力機能" do
+        before do
+          login_for_system(user)
+        end
+  
+        it "トップページからCSV出力が行えること" do
+          visit root_path
+          click_link 'みんなの料理をCSV出力'
+          expect(page.response_headers['Content-Disposition']).to \
+            include("みんなの料理一覧_#{Time.current.strftime('%Y%m%d_%H%M')}.csv")
+        end
+  
+        it "プロフィールページからCSV出力が行えること" do
+          visit user_path(user)
+          click_link 'みんなの料理をCSV出力'
+          expect(page.response_headers['Content-Disposition']).to \
+            include("みんなの料理一覧_#{Time.current.strftime('%Y%m%d_%H%M')}.csv")
+        end
+      end
+    end
   end
-end
