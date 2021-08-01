@@ -106,5 +106,4 @@ belongs_to :prototype
 -jQuery
 -Ruby
 -Ruby on Rails
--MySqL
 -AWS
