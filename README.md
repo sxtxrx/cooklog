@@ -1,9 +1,35 @@
-@ -1,24 +1,79 @@
-# README
+# アプリケーションの概要
+作った料理を記録して共有できる、料理投稿SNSサービス。 <アプリケーションのURL>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-# README
+# 技術的ポイント
+・**RSpec**でModel, Request, Systemテスト記述（計219examples）  
+・**Ajax**を用いた非同期処理（フォロー/未フォロー、お気に入り登録/未登録などの切り替え表示）  
+・**Bootstrap**によるレスポンシブ対応  
+・**Rubocop**を使用したコード規約に沿った開発  
+・**9つのモデル**をそれぞれ関連付けて使用  
+
+# アプリケーションの機能
+・作った料理を投稿  
+・画像を正方形に整形して投稿（CarrierWaveを使用）  
+・料理ログ登録（料理を作る度にログを追加し、これまでにいつ作ったか、何回作ったかが一目でわかる）  
+・別ユーザーの料理に対して「食べたい！」リクエストを送信  
+・フォロー  
+・お気に入り登録  
+・コメント  
+・通知（お気に入り登録 or コメントがあった場合）  
+・検索（Ransackを使用）  
+・CSV出力  
+・ログイン  
+・ログイン状態の保持  
+・モデルに対するバリデーション  
+
+# 環境
+■フレームワーク  
+　Ruby on Rails  
+■データベース  
+　PostgreSQL  
+
+
 
 #users table
 
@@ -20,10 +46,10 @@ application up and running.
 
 
 ### Association
-has_many :prototypes,dependent: :destroy
-  has_many :comments,dependent: :destroy
-  has_many :likes, dependent: :destroy
-  has_many :prototype_likes, through: :likes, source: :prototype
+has_many :
+  has_many :
+  has_many :
+  has_many :
 
 
 #relationship table
@@ -31,12 +57,11 @@ has_many :prototypes,dependent: :destroy
 |           |  || 
 
 ### Association
-belongs_to :country
-belongs_to :user
-has_many :comments,dependent: :destroy
-has_one_attached :image
-has_many :likes,dependent: :destroy
-has_many :users, through: :likes
+belongs_to :
+belongs_to :
+has_many :
+has_many :
+has_many :
 
 
 
@@ -52,41 +77,25 @@ has_many :users, through: :likes
 
 Things you may want to cover:
 ### Association
-belongs_to :prototype
-belongs_to :user
+belongs_to :
+belongs_to :
+has_many :
+has_many :
+has_many :
 
 * Ruby version
 
 * System dependencies
 
 * Configuration
-＃likes table
+＃favorites table
 | Column         | Type      | Options     |
 | --------       | ------    | ----------- |
-|prototype_id      | reference    |foreign key |
-|user_id           |reference   |foreign key |
+|    | reference    |foreign key |
+|         |reference   |foreign key |
 ### Association
 belongs_to :user
 belongs_to :prototype
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
- ## アプリの名前
- -trippin'asia(URL:https://trippinasia.herokuapp.com/)
-
-* Deployment instructions
-## 使用ライブラリ、フレーム
-
-* ...
--html&css
--JavaScript
--jQuery
--Ruby
--Ruby on Rails
--MySqL
--AWS
