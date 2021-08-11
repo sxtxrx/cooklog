@@ -66,6 +66,10 @@ https://cooklog0404.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/1d559130158d9bf2bad9cbdd79bce325.png)](https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325)
 
 
+
+# データベース設計
+
+
 # users table
 
 |  attribute|type |
