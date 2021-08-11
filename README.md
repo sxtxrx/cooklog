@@ -74,6 +74,7 @@ has_many :favorites, dependent: :destroy
 
 ### Association
 belongs_to :follower, class_name: "User"
+
 belongs_to :followed, class_name: "User" 
 
 
@@ -94,10 +95,15 @@ belongs_to :followed, class_name: "User"
 
 ### Association
 belongs_to :user
+
 has_many :favorites, dependent: :destroy
+
 has_many :comments, dependent: :destroy
+
 has_many :lists, dependent:  :destroy
+
 has_many :logs, dependent: :destroy
+
 has_many :ingredients, dependent: :destroy 
 
 # ingredent table
@@ -115,8 +121,9 @@ belongs_to :dish
 |user_id|integer|
 |dish_id|integer|
 ### Association
- belongs_to :user
-    belongs_to :dish
+belongs_to :user
+
+belongs_to :dish
 # comment table
 |attribute| type     |
 | -------- | ----------- |
@@ -124,6 +131,7 @@ belongs_to :dish
 |user_id|integer|
 |content|text|
 ### Association
+belongs_to :dish
 
 # notifacation table
 |attribute| type     |
@@ -144,6 +152,7 @@ belongs_to :user
 |from_user_id|integer|
 ### Association
 belongs_to :user
+
 belongs_to :dish
 
 
