@@ -12,9 +12,8 @@ https://gyazo.com/44694f5b6d89ec8d8587d5e4d858835b
 https://gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a
 他のユーザーからいいね、コメント等が来ると通知が表示されます
 [![Image from Gyazo](https://i.gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6.png)](https://gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6)
+[![Image from Gyazo](https://i.gyazo.com/5a58f2d638a6be5c729606a2e288f4ab.png)](https://gyazo.com/5a58f2d638a6be5c729606a2e288f4ab)
 
-https://gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6
-https://gyazo.com/5a58f2d638a6be5c729606a2e288f4ab
 他のユーザーの料理をお気に入り登録できます
 [![Image from Gyazo](https://i.gyazo.com/1d559130158d9bf2bad9cbdd79bce325.png)](https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325)
 ## github URL
