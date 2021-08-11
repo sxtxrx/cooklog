@@ -1,36 +1,14 @@
 # README
 
-## 使い方
-【採用担当者様　専用ログインフォーム】からお入りください。
-[![Image from Gyazo](https://i.gyazo.com/6746a06bda800bde39a09594b4dab421.png)](https://gyazo.com/6746a06bda800bde39a09594b4dab421)
-
-ログイン後『新しい』から料理投稿ができます。
-
-[![Image from Gyazo](https://i.gyazo.com/7100f7e1d38d059c103a3bd3dfc6674d.png)](https://gyazo.com/7100f7e1d38d059c103a3bd3dfc6674d)
-[![Image from Gyazo](https://i.gyazo.com/653b7b90bd28123e1388147d392aaf3b.png)](https://gyazo.com/653b7b90bd28123e1388147d392aaf3b)
-
-
-トップページから写真投稿の一覧が閲覧できます。
-[![Image from Gyazo](https://i.gyazo.com/44694f5b6d89ec8d8587d5e4d858835b.png)](https://gyazo.com/44694f5b6d89ec8d8587d5e4d858835b)
-
-料理をクリックで写真詳細ページに遷移しコメント、いいね、リスト登録、お気に入り登録ができます。
-[![Image from Gyazo](https://i.gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a.png)](https://gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a)
-
-他のユーザーからいいね、コメント等が来ると通知が表示されます
-[![Image from Gyazo](https://i.gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6.png)](https://gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6)
-[![Image from Gyazo](https://i.gyazo.com/5a58f2d638a6be5c729606a2e288f4ab.png)](https://gyazo.com/5a58f2d638a6be5c729606a2e288f4ab)
-
-お気に入り、リスト一覧表示ができます
-[![Image from Gyazo](https://i.gyazo.com/1d559130158d9bf2bad9cbdd79bce325.png)](https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325)
-## github URL
-https://github.com/sxtxrx/trippinasia.git
-
-
-
-
+# アプリケーション名
+# "cooklog"
 
 # アプリケーションの概要
-作った料理を記録して共有できる、料理投稿SNSサービス。 <アプリケーションのURL>
+作った料理を記録して共有できる、料理投稿SNSサービス。 
+<アプリケーションのURL>
+https://cooklog0404.herokuapp.com/
+
+
 
 # 技術的ポイント
 ・**RSpec**でModel, Request, Systemテスト記述（計219examples）  
@@ -59,6 +37,35 @@ https://github.com/sxtxrx/trippinasia.git
 　Ruby on Rails  
 ■データベース  
 　PostgreSQL  
+
+
+
+## 使い方
+【採用担当者様　専用ログインフォーム】からお入りください。
+[![Image from Gyazo](https://i.gyazo.com/6746a06bda800bde39a09594b4dab421.png)](https://gyazo.com/6746a06bda800bde39a09594b4dab421)
+
+ログイン後『新しい』から料理投稿ができます。
+
+[![Image from Gyazo](https://i.gyazo.com/7100f7e1d38d059c103a3bd3dfc6674d.png)](https://gyazo.com/7100f7e1d38d059c103a3bd3dfc6674d)
+[![Image from Gyazo](https://i.gyazo.com/653b7b90bd28123e1388147d392aaf3b.png)](https://gyazo.com/653b7b90bd28123e1388147d392aaf3b)
+
+
+トップページから写真投稿の一覧が閲覧できます。
+[![Image from Gyazo](https://i.gyazo.com/44694f5b6d89ec8d8587d5e4d858835b.png)](https://gyazo.com/44694f5b6d89ec8d8587d5e4d858835b)
+
+料理をクリックで写真詳細ページに遷移しコメント、いいね、リスト登録、お気に入り登録ができます。
+[![Image from Gyazo](https://i.gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a.png)](https://gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a)
+
+他のユーザーからいいね、コメント等が来ると通知が表示されます
+[![Image from Gyazo](https://i.gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6.png)](https://gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6)
+[![Image from Gyazo](https://i.gyazo.com/5a58f2d638a6be5c729606a2e288f4ab.png)](https://gyazo.com/5a58f2d638a6be5c729606a2e288f4ab)
+
+お気に入り、リスト一覧表示ができます
+[![Image from Gyazo](https://i.gyazo.com/1d559130158d9bf2bad9cbdd79bce325.png)](https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325)
+## github URL
+https://github.com/sxtxrx/trippinasia.git
+
+
 
 
 
