@@ -55,7 +55,7 @@ https://cooklog0404.herokuapp.com/
 トップページから写真投稿の一覧が閲覧できます。
 [![Image from Gyazo](https://i.gyazo.com/44694f5b6d89ec8d8587d5e4d858835b.png)](https://gyazo.com/44694f5b6d89ec8d8587d5e4d858835b)
 
-料理をクリックで写真詳細ページに遷移しコメント、いいね、リスト登録、お気に入り登録ができます。
+料理をクリックで写真詳細ページに遷移しコメント、いいね、リスト登録、お気に入り登録(非同期通信）ができます。
 [![Image from Gyazo](https://i.gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a.png)](https://gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a)
 
 他のユーザーからいいね、コメント等が来ると通知が表示されます
