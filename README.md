@@ -33,7 +33,7 @@
 
 #users table
 
-| Column            | Type    | Options     |
+| Column            | attribute    | type    |
 | --------          | ------  | ----------- |
 | name          | string  |null: false  |
 | email             | string  |null: false ,unique: true|
@@ -53,8 +53,11 @@ has_many :
 
 
 #relationship table
-|           |  || 
-|           |  || 
+
+| Column            | attribute    | type     |
+| --------          | ------  | ----------- |
+| relation_ship |follower_id  |integer| 
+| relation_ship |followed_id  |ingefer| 
 
 ### Association
 belongs_to :
