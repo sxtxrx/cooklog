@@ -46,10 +46,21 @@
 
 
 ### Association
-has_many :
-  has_many :
-  has_many :
-  has_many :
+has_many :dishes, dependent: :destroy
+has_many :active_relationships, class_name: "Relationship",
+                                    foreign_key: "follower_id",
+                                    dependent: :destroy
+
+has_many :following, through: :active_relationships, source: :followed
+has_many :passive_relationships, class_name: "Relationship",
+                                     foreign_key: "followed_id",
+                                     dependent: :destroy
+has_many :favorites, dependent: :destroy
+has_many :notifications, dependent: :destroy
+has_many :lists, dependent: :destroy
+
+has_many :followers, through: :passive_relationships, source: :follower
+has_many :favorites, dependent: :destroy
 
 
 # relationship table
@@ -60,11 +71,8 @@ has_many :
  |followed_id  |ingefer| 
 
 ### Association
-belongs_to :
-belongs_to :
-has_many :
-has_many :
-has_many :
+belongs_to :follower, class_name: "User"
+belongs_to :followed, class_name: "User" 
 
 
 
@@ -83,11 +91,12 @@ has_many :
 |cook_memo|text|
 
 ### Association
-belongs_to :
-belongs_to :
-has_many :
-has_many :
-has_many :
+belongs_to :user
+has_many :favorites, dependent: :destroy
+has_many :comments, dependent: :destroy
+has_many :lists, dependent:  :destroy
+has_many :logs, dependent: :destroy
+has_many :ingredients, dependent: :destroy 
 
 # ingredent table
 | attribute| type     |
@@ -95,20 +104,24 @@ has_many :
 |name|string|
 |dish_id|integer|
 |quantity|string|
-
+### Association
+belongs_to :dish
 
 # favorite table
 | attribute| type     |
 | -------- | ----------- |
 |user_id|integer|
 |dish_id|integer|
-
-# comments table
+### Association
+ belongs_to :user
+    belongs_to :dish
+# comment table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
 |user_id|integer|
 |content|text|
+### Association
 
 # notifacation table
 |attribute| type     |
@@ -118,24 +131,26 @@ has_many :
 |variety|integer|
 |content|text|
 |from_user_id|integer|
+### Association
+belongs_to :user
 
-# lists table
+# list table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
 |user_id|integer|
 |from_user_id|integer|
+### Association
+belongs_to :user
+belongs_to :dish
 
 
-# logs table
+# log table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
 |content|text|
-
-
 ### Association
-belongs_to :user
-belongs_to :prototype
+belongs_to :dish
 
 
