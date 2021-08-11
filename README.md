@@ -33,16 +33,16 @@
 
 #users table
 
-| Column            | attribute    | type    |
-| --------          | ------  | ----------- |
-| name          | string  |null: false  |
-| email             | string  |null: false ,unique: true|
-| picture| string  |  | 
-|introduction            | text   |  | 
-| sex   |strings  |         |
-| admin|  boolean|      | 
-|password_digest|  |        | 
-|remember_digest|  |        | 
+|  attribute|type |
+| -------- | ----------- |
+| name     | string  |
+| email    | string  |
+| picture| string  |
+|introduction | text   |
+| sex   |strings  | 
+| admin|  boolean|
+|password_digest|  | 
+|remember_digest|  |   
 
 
 ### Association
@@ -54,10 +54,10 @@ has_many :
 
 #relationship table
 
-| Column            | attribute    | type     |
-| --------          | ------  | ----------- |
-| relation_ship |follower_id  |integer| 
-| relation_ship |followed_id  |ingefer| 
+| attribute| type     |
+| -------- | ----------- |
+ |follower_id  |integer| 
+ |followed_id  |ingefer| 
 
 ### Association
 belongs_to :
@@ -69,16 +69,19 @@ has_many :
 
 
 #dish table
-|           |  || 
-|           |  || 
-|           |  || 
-|           |  || 
-|           |  || 
-|           |  || 
-|           |  || 
-|           |  || 
+| attribute| type     |
+| -------- | ----------- |
+|name|string|
+|user_id| integer |
+|picture| string |
+|description| text |
+|portion| float |
+|tips|  text|
+|reference| text |
+|required_time|integer|
+|popularity|integer|
+|cook_memo|text|
 
-Things you may want to cover:
 ### Association
 belongs_to :
 belongs_to :
@@ -86,16 +89,51 @@ has_many :
 has_many :
 has_many :
 
-* Ruby version
+#ingredent table
+| attribute| type     |
+| -------- | ----------- |
+|name|string|
+|dish_id|integer|
+|quantity|string|
 
-* System dependencies
 
-* Configuration
-＃favorites table
-| Column         | Type      | Options     |
-| --------       | ------    | ----------- |
-|    | reference    |foreign key |
-|         |reference   |foreign key |
+#favorite table
+| attribute| type     |
+| -------- | ----------- |
+|user_id|integer|
+|dish_id|integer|
+
+#comments table
+|attribute| type     |
+| -------- | ----------- |
+|dish_id|integer|
+|user_id|integer|
+|content|text|
+
+#notifacation table
+|attribute| type     |
+| -------- | ----------- |
+|dish_id|integer|
+|user_id|integer|
+|variety|integer|
+|content|text|
+|from_user_id|integer|
+
+#lists table
+|attribute| type     |
+| -------- | ----------- |
+|dish_id|integer|
+|user_id|integer|
+|from_user_id|integer|
+
+
+#logs table
+|attribute| type     |
+| -------- | ----------- |
+|dish_id|integer|
+|content|text|
+
+
 ### Association
 belongs_to :user
 belongs_to :prototype
