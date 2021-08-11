@@ -1,3 +1,28 @@
+# README
+
+## 使い方
+【採用担当者様　専用ログインフォーム】からお入りください。
+
+ログイン後『新しい』から料理投稿ができます。
+https://gyazo.com/7100f7e1d38d059c103a3bd3dfc6674d
+https://gyazo.com/653b7b90bd28123e1388147d392aaf3b
+トップページから写真投稿の一覧が閲覧できます。
+https://gyazo.com/44694f5b6d89ec8d8587d5e4d858835b
+料理をクリックで写真詳細ページに遷移しコメント、いいねができます。
+https://gyazo.com/af4b7bc4ba215c6f718eff7887cb8d4a
+他のユーザーからいいね、コメント等が来ると通知が表示されます
+https://gyazo.com/ac33e068c9b6664ad8dc2f35c571ecc6
+https://gyazo.com/5a58f2d638a6be5c729606a2e288f4ab
+他のユーザーの料理をお気に入り登録できます
+https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325
+
+## github URL
+https://github.com/sxtxrx/trippinasia.git
+
+
+
+
+
 # アプリケーションの概要
 作った料理を記録して共有できる、料理投稿SNSサービス。 <アプリケーションのURL>
 
