@@ -64,11 +64,6 @@ https://cooklog0404.herokuapp.com/
 
 お気に入り、リスト一覧表示ができます
 [![Image from Gyazo](https://i.gyazo.com/1d559130158d9bf2bad9cbdd79bce325.png)](https://gyazo.com/1d559130158d9bf2bad9cbdd79bce325)
-## github URL
-https://github.com/sxtxrx/trippinasia.git
-
-
-
 
 
 # users table
