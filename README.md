@@ -31,7 +31,7 @@
 
 
 
-#users table
+# users table
 
 |  attribute|type |
 | -------- | ----------- |
@@ -52,7 +52,7 @@ has_many :
   has_many :
 
 
-#relationship table
+# relationship table
 
 | attribute| type     |
 | -------- | ----------- |
@@ -68,7 +68,7 @@ has_many :
 
 
 
-#dish table
+# dish table
 | attribute| type     |
 | -------- | ----------- |
 |name|string|
@@ -89,7 +89,7 @@ has_many :
 has_many :
 has_many :
 
-#ingredent table
+# ingredent table
 | attribute| type     |
 | -------- | ----------- |
 |name|string|
@@ -97,20 +97,20 @@ has_many :
 |quantity|string|
 
 
-#favorite table
+# favorite table
 | attribute| type     |
 | -------- | ----------- |
 |user_id|integer|
 |dish_id|integer|
 
-#comments table
+# comments table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
 |user_id|integer|
 |content|text|
 
-#notifacation table
+# notifacation table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
@@ -119,7 +119,7 @@ has_many :
 |content|text|
 |from_user_id|integer|
 
-#lists table
+# lists table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
@@ -127,7 +127,7 @@ has_many :
 |from_user_id|integer|
 
 
-#logs table
+# logs table
 |attribute| type     |
 | -------- | ----------- |
 |dish_id|integer|
